@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
+
+.header {
+  background-color: #84b4b1;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0 120px;
+}
+
+.header h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 65px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 0.8;
+  padding-top: 50px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+.header h1 span {
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-size: 25px;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 40px;
+  }
+  
+  .header h1 span {
+    font-size: 18px;
+  }
+}
