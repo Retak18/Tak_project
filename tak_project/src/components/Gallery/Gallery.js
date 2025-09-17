@@ -3,50 +3,95 @@ import './Gallery.css';
 import { portfolioItems } from '../../data/portfolioData';
 
 const Gallery = () => {
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [selectedItem, setSelectedItem] = useState();
+//   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+//   const [isPaused, setIsPaused] = useState(false);
+  const [sliderIndex, setSliderIndex] = useState(0);
 
+
+
+  const prev = () => {
+    if( sliderIndex <= 0 ) {
+      setSliderIndex( selectedItem.image.length -1 );
+    } else {
+      setSliderIndex( sliderIndex - 1 );
+    }
+  }
+
+  const next = () => {
+    if( sliderIndex >= selectedItem.image.length -1 ) {
+      setSliderIndex(0);
+    } else {
+      setSliderIndex( sliderIndex + 1 );
+    }
+  }
+
+  
+//   React.useEffect(() => {
+//     // scrollInterval = setTimeout(() => {
+//     //   setCurrentImageIndex((currentImageIndex + 1) % selectedItem.image.length);
+//     // }, 5000);
+//     // return () => clearTimeout(scrollInterval);
+//       if (!selectedItem || isPaused) return;
+  
+//   const imagesArray = selectedItem.images || [selectedItem.image];
+//   if (imagesArray.length <= 1) return;
+  
+//   const scrollInterval = setTimeout(() => {
+//     setCurrentImageIndex((currentImageIndex + 1) % selectedItem.image.length);
+//     }, 5000);
+  
+//   return () => clearTimeout(scrollInterval);
+// }, [selectedItem, currentImageIndex, isPaused]);
+
+
+  
   const handleItemClick = (item) => {
     setSelectedItem(item);
-    setCurrentImageIndex(0); //Reset à la 1ere image
+    setSliderIndex(0); //Reset à la 1ere image
     document.body.classList.add('portfolio-open');
     };
   
 
   const handleCloseClick = () => {
     setSelectedItem(null);
-    setCurrentImageIndex(0);
+    setSliderIndex(0);
+    // setIsPaused(false);
     document.body.classList.remove('portfolio-open'); 
   };
 
-  //Carousel button handlers
-  const nextImage = () => {
-    setCurrentImageIndex(prev => 
-      prev < selectedItem.image.length - 1 ? prev + 1 : prev
-    );
-  };
+//   //Carousel button handlers
+//   const nextImage = () => {
+//     const imagesArray = selectedItem.images || [selectedItem.image];
+//     setCurrentImageIndex(prev => 
+//       prev < imagesArray.length - 1 ? prev + 1 : prev
+//     );
+//     setIsPaused(() => setIsPaused(false), 5000);
+//   };
 
-  const prevImage = () => {
-    setCurrentImageIndex(prev => prev > 0 ? prev - 1 : prev);
-  };
+//   const prevImage = () => {
+//     setCurrentImageIndex(prev => prev > 0 ? prev - 1 : prev);
+//     setIsPaused(true);
+//     setTimeout(() => setIsPaused(false), 5000);
+//   };
 
-  // Handle escape key
-  useEffect(() => {
-    const handleEscKey = (event) => {
-      if (event.key === 'Escape') {
-        setSelectedItem(null);
-      }
-    };
+//   // Handle escape key
+//   useEffect(() => {
+//     const handleEscKey = (event) => {
+//       if (event.key === 'Escape') {
+//         setSelectedItem(null);
+//       }
+//     };
 
-    if (selectedItem) {
-      document.addEventListener('keydown', handleEscKey);
-    };
+//     if (selectedItem) {
+//       document.addEventListener('keydown', handleEscKey);
+//     };
 
-    return () => {
-      document.removeEventListener('keydown', handleEscKey);
-      document.body.style.overflow = 'auto';
-    };
-  }, [selectedItem]);
+//     return () => {
+//       document.removeEventListener('keydown', handleEscKey);
+//       document.body.style.overflow = 'auto';
+//     };
+//   }, [selectedItem]);
 
   return (
     <>
@@ -84,7 +129,7 @@ const Gallery = () => {
               <div className="carousel-container">
                   <div 
                     className="carousel-wrapper" 
-                    style={{transform: `translateX(-${currentImageIndex * 100}%)`}}
+                    style={{transform: `translateX(-${sliderIndex * 100}%)`}}
                   >
                     {selectedItem.image.map((img, index) => (
                       <img key={index} src={img} alt={`${selectedItem.title} ${index + 1}`} />
@@ -93,14 +138,14 @@ const Gallery = () => {
                 
                   {selectedItem.image.length > 1 && (
                     <>
-                      <button className="carousel-btn prev" onClick={prevImage}>‹</button>
-                      <button className="carousel-btn next" onClick={nextImage}>›</button>
+                      <button className="carousel-btn prev" onClick={prev}>‹</button>
+                      <button className="carousel-btn next" onClick={next}>›</button>
                       <div className="carousel-dots">
                         {selectedItem.image.map((_, index) => (
                           <span 
                             key={index} 
-                            className={`dot ${index === currentImageIndex ? 'active' : ''}`}
-                            onClick={() => setCurrentImageIndex(index)}
+                            className={`dot ${index === sliderIndex ? 'active' : ''}`}
+                            onClick={() => setSliderIndex(index)}
                           />
                         ))}
                       </div>
