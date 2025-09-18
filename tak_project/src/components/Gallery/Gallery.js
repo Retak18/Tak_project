@@ -124,7 +124,8 @@ const Gallery = () => {
             <div className="row">
               <div className="description">
                 <h1>{selectedItem.title}</h1>
-                <p>{selectedItem.description}</p>
+                {selectedItem.description.split('\n').map((line, index) =>
+                  <p key={index}>{line}</p>)}
               </div>
               <div className="carousel-container">
                   <div 
