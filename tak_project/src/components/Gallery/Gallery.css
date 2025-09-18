@@ -13,7 +13,7 @@
 /* Principal Container */
 .row {
     width: 100%;
-    max-width: 1170px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0;
     clear: both;    /* Évite les problèmes de float */
@@ -50,7 +50,7 @@
     margin: 0 0.8771929824561403%;  /* Marges calculées pour 4 colonnes */
     overflow: hidden;   /* Cache le débordement */
     margin-bottom: 20px;
-    width: 23.24561403508772%;  /* Largeur calculée pour 4 colonnes (25% - marges) */
+    width: 40%;  /* Largeur calculée pour 4 colonnes a la base  (a modifier pour plus de projets 25% - marges) */
     position: relative; /* Pour les pseudo-éléments hover */
 }
 
@@ -140,7 +140,7 @@
 }
 
 .port img {
-    width: 50%;  /* Moitié de l'espace */
+    width: 75%;  /* Moitié de l'espace */
     max-height: 100%;
     height: auto;
     object-fit: cover;  /* Couvre l'espace sans déformer */
@@ -178,7 +178,7 @@
 
 .port.item_open > * {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0%);
 }
 
 /* Close Button */
@@ -208,7 +208,7 @@
 }
 
 .carousel-container {
-    width: 50%; 
+    width: 80%; 
     height: 400px;
     position: relative;
     overflow: hidden;
@@ -233,7 +233,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.3);
     color: white;
     border: none;
     font-size: 24px;
@@ -252,6 +252,9 @@
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 15px;
+    padding: 5px;
 }
 
 .dot {
@@ -271,13 +274,14 @@
 @media (max-width: 768px) {
 .gallery ul li {
     width: 80%;
-    margin: 0 1%;
+    margin: 1% 1%;
     padding-right: 40px;
 }
 
 .port .row {
     flex-direction: column;
     padding: 20px;
+    align-items: center;
 }
 
 .port .description,
@@ -289,6 +293,10 @@
 .port .description {
     padding: 20px;
 }
+.carousel-container {
+    width: 100%;
+    height: 80%;
+} 
 }
 
 @media (max-width: 480px) {
