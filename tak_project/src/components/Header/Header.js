@@ -6,10 +6,10 @@ const Header = () => {
     <header className="header">
       <h1>
         Tak Project <br />
-        <span>[ Portfolio Gallery ]</span>
+        <span className='subtitle'>[ Portfolio Gallery ]</span>
       </h1>
-      <p>Welcome to my portfolio gallery. Here you will can see my projects. The development and the other details of the organisation. </p>
-      <p className="click">Click on the images to see the details</p>
+      <p>Bienvenue dans ma galerie de portfolio. Ici, vous pourrez voir mes projets, le développement et les détails d'organisation.</p>
+      <p className="click">Cliquez sur les images pour voir les détails</p>
     </header>
   );
 };

@@ -27,6 +27,11 @@
   line-height: 1;
 }
 
+.subtitle {
+background: linear-gradient(0.25turn, #3f87a6, #d0e6bf, #f69d3c);
+height: 40px;
+};
+
 @media (max-width: 768px) {
   .header h1 {
     font-size: 40px;
