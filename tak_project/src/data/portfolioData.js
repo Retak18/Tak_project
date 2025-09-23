@@ -24,11 +24,14 @@ export const portfolioItems = [
     thumbnail: "../CryptoDashboard.webp",
     image: [
         "../CryptoDashboard.webp",
+        "CD_Dash.webp",
+        "CD_Report.webp",
+        "CD_Wallet.webp",
         "Storyboard.webp",
         "User_test.webp",
         "Schema_BDD.webp",
         "Sprint1.webp",
-        "Sprint2.webp"
+        "Sprint2.webp",
     ]
   },
   // {
