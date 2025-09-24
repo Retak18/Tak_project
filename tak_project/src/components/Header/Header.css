@@ -25,12 +25,29 @@
   letter-spacing: 7px;
   font-size: 25px;
   line-height: 1;
+  background: linear-gradient(0.25turn, #3f87a6, #d0e6bf, #f69d3c);
+  padding: 0px 0px 4px 6px;
 }
 
-.subtitle {
-background: linear-gradient(0.25turn, #3f87a6, #d0e6bf, #f69d3c);
-height: 40px;
-};
+
+
+.social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mail{
+  margin: 0px 5px 0px 0px;
+  width: 29.5px;
+  height: 29.5px;
+}
+
+.link img {
+  margin:  0px 0px 0px 5px;
+  width: 26px;
+  height: 26px;
+}
 
 @media (max-width: 768px) {
   .header h1 {
