@@ -5,7 +5,7 @@ export const portfolioItems = [
     description: `Conception et développement d'une application de gestion de bibliothèque en ligne en 1 semaine, dans le cadre d'un projet en équipe de 3 personnes. \n
     En commençant par la conception de l'UML ainsi que de son schéma de base de données dans une vision SQL. Ensuite on a mis en place le backlog produit via Trello afin de s'organiser et s'entendre sur le travail à faire. A partir du Trello on s'est réparti les tâches, dans un rythme de sprint quotidien, sous un échange d'idées, un partage des connaissances et de soutien, nous avons développé le projet sous PHP avec Symfony, une gestion des bases de données via MySQL et Twig pour la gestion du front-end. \n
     L'application permet de gérer les locations, leurs durées, le blocage si le temps est expiré, la recherche de livres, une gestion de la base de donnée ( des clients, leurs historiques de locations, l'historique de location du livre, l'intégration de nouveau livres)`,
-    thumbnail: "../Libra.webp",
+    thumbnail: "../LibraNova.webp",
     image: [
         "../LibraNova.webp",
         "../Libra.webp",
