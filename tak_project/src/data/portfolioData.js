@@ -7,9 +7,15 @@ export const portfolioItems = [
     L'application permet de gérer les locations, leurs durées, le blocage si le temps est expiré, la recherche de livres, une gestion de la base de donnée ( des clients, leurs historiques de locations, l'historique de location du livre, l'intégration de nouveau livres)`,
     thumbnail: "../Libra.webp",
     image: [
+        "../LibraNova.webp",
         "../Libra.webp",
+        "../Libra2.webp",
         "../UML_LibraNova.webp",
         "../MySQL_LibraNova.webp",
+        "../LibraLog.webp",
+        "../catalogue.webp",
+        "../contact.webp",
+        "../Admin.webp",
         // "https://cdn.dribbble.com/users/545884/screenshots/3148799/technical-book.jpg"
     ]
   },
